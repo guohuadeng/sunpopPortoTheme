@@ -114,6 +114,15 @@
                 </extensions>
             </browser>
         </cms>
+        <translate>
+            <modules>
+                <Smartwave_Porto>
+                    <files>
+                        <default>Smartwave_Porto.csv</default>
+                    </files>
+                </Smartwave_Porto>
+            </modules>
+        </translate>
     </adminhtml>
     <default>
         <porto_design>
