@@ -1,0 +1,131 @@
+<style type="text/css"><!--
+.header-container{border-bottom:1px solid #e1e1e1;}
+--></style>
+<div class="row" style="margin: 0 -10px;">
+    <div class="col-md-3" style="padding: 0 10px;">
+        <div class="home-side-menu" style="margin-bottom: 20px;">
+            {{block type="core/template" template="smartwave/megamenu/html/sidemenu.phtml"}} {{block type="core/template" template="smartwave/megamenu/html/sidemobilemenu.phtml"}}</div>
+    </div>
+    <div class="col-md-9" style="padding: 0 10px;">
+        <div class="owl-bottom-narrow owl-banner-carousel" style="margin-bottom: 20px;">
+            <div id="banner-slider-demo-6" class="owl-carousel owl-theme">
+                <div class="item" style="background: #f0f0f0; background-image: linear-gradient(#e8e8e8,#f0f0f0); position: relative; border-radius: 5px;"><img alt="" src="{{media url="wysiwyg/porto/homepage/slider/05/01.png"}}" />
+                    <div class="content type1" style="position: absolute; top: 30%; left: 10%; text-align: right;">
+                        <h2 style="font-weight: 600; line-height: 1; color: #08c;">HUGE <b style="font-weight: 800;">SALE</b></h2>
+                        <p style="color: #777; font-weight: 300; line-height: 1; margin-bottom: 15px;">Now starting at <span style="color: #535353; font-weight: 400;">$99</span></p>
+                        <a style="font-weight: 300;" href="#">Shop now &gt;</a></div>
+                </div>
+                <div class="item" style="background: #f0f0f0; background-image: linear-gradient(#e8e8e8,#f0f0f0); position: relative; border-radius: 5px;"><img alt="" src="{{media url="wysiwyg/porto/homepage/slider/05/02.png"}}" />
+                    <div class="content type2" style="position: absolute; top: 16.6%; right: 25%; text-align: center;">
+                        <h2 style="font-weight: bold; line-height: 1; color: #004f7f; border-color: #08c;">SPECIAL</h2>
+                        <h3 style="color: #08c; font-weight: bold; line-height: 1; margin-bottom: 15px;">OFFER</h3>
+                        <p style="color: #004f7f; font-weight: 400; line-height: 1.4; margin-bottom: 20px;">Buy new digital cameras &amp; <br />get lenses or accessories</p>
+                        <a class="btn btn-default" href="#">Shop now!</a></div>
+                </div>
+            </div>
+            <script type="text/javascript">// <![CDATA[
+            jQuery(function($){
+                $("#banner-slider-demo-6").owlCarousel({autoPlay:true,lazyLoad: true,stopOnHover: true,pagination: true, autoPlay: true,navigation: false,slideSpeed : 500,paginationSpeed : 500,singleItem:true});
+            });
+
+            // ]]></script>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin: 0 -10px;">
+    <div class="col-md-3" style="padding: 0 10px;">
+        <div class="block block-subscribe home-sidebar-block" style="margin-top: 40px; margin-bottom: 30px;">
+            <div class="block-title"><strong><span>Be the First to Know</span></strong></div>
+            <div class="block-content">
+                <p>Keep up on our always evolving product features and technology.<br />Enter your e-mail and subscribe to our newsletter.</p>
+                {{block type="newsletter/subscribe" template="newsletter/home_side_subscribe.phtml"}}</div>
+        </div>
+        <h2 class="filter-title" style="background-image: none; margin-bottom: 5px;"><span class="content"><strong>国际认证</strong></span></h2>
+        <div id="testimonials-slider-demo-6" class="owl-carousel owl-theme">
+            <div class="item">
+                <blockquote class="testimonial">
+                    <p>新力印章，ISO9001质量认证.畅销全球100多个国家。</p>
+                </blockquote>
+                <div class="testimonial-arrow-down">&nbsp;</div>
+                <div class="testimonial-author">
+                    <div class="img-thumbnail img-thumbnail-small"><img alt="" src="{{media url="wysiwyg/porto/homepage/content/07/client-1-11.jpg"}}" height="60" width="60" /></div>
+                    <p><strong>John Smith</strong><span>CEO &amp; Founder - Okler</span></p>
+                </div>
+            </div>
+            <div class="item">
+                <blockquote class="testimonial">
+                    <p>新力印油，独家安全无害认证。</p>
+                </blockquote>
+                <div class="testimonial-arrow-down">&nbsp;</div>
+                <div class="testimonial-author">
+                    <div class="img-thumbnail img-thumbnail-small"><img alt="" src="{{media url="wysiwyg/porto/homepage/content/07/client-1-11.jpg"}}" height="60" width="60" /></div>
+                    <p><strong>John Smith</strong><span>CEO &amp; Founder - Okler</span></p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">// <![CDATA[
+        jQuery(function($){
+            $("#testimonials-slider-demo-6").owlCarousel({
+                lazyLoad: true,
+                responsiveRefreshRate: 50,
+                slideSpeed: 200,
+                paginationSpeed: 500,
+                scrollPerPage: true,
+                stopOnHover: true,
+                rewindNav: true,
+                rewindSpeed: 600,
+                pagination: true,
+                navigation: false,
+                autoPlay: true,
+                singleItem: true
+            });
+        });
+
+        // ]]></script>
+        <h2 class="filter-title" style="background-image: none; margin-bottom: -15px; margin-top: 20px;"><span class="content"><strong>From the Blog</strong></span></h2>
+        <div id="latest_news" style="margin: 0 -10px;">{{block type="blog/last" name="latest_news" template="blog/recentposts_home.phtml"}}</div>
+        <style type="text/css"><!--
+        .recent-posts .item .col-sm-5, .recent-posts .item .col-sm-7{width:100%;}
+        --></style>
+        <script type="text/javascript">// <![CDATA[
+        jQuery(function($){
+            $("#latest_news .owl-carousel").owlCarousel({
+                lazyLoad: true,
+                responsiveRefreshRate: 50,
+                slideSpeed: 200,
+                paginationSpeed: 500,
+                scrollPerPage: true,
+                stopOnHover: true,
+                rewindNav: true,
+                rewindSpeed: 600,
+                pagination: true,
+                navigation: false,
+                autoPlay: true,
+                singleItem: true
+            });
+        });
+
+        // ]]></script>
+    </div>
+    <div class="col-md-9" style="padding: 0 10px;">
+        <div id="featured_fashion_product" class="owl-top-narrow">{{block type="filterproducts/featured_home_list" name="featured_list" product_count="8" template="filterproducts/list.phtml"}}</div>
+        <script type="text/javascript">// <![CDATA[
+        jQuery(function($){
+            $("#featured_fashion_product .filter-products .owl-carousel").owlCarousel({lazyLoad: true,    itemsCustom: [ [0, 1], [320, 1], [480, 2], [768, 3], [992, 3], [1200, 4] ],    responsiveRefreshRate: 50,    slideSpeed: 200,    paginationSpeed: 500,    scrollPerPage: false,    stopOnHover: true,    rewindNav: true,    rewindSpeed: 600,    pagination: false,    navigation: true,    autoPlay: true,    navigationText:["<i class='icon-left-open'></i>","<i class='icon-right-open'></i>"]});
+        });
+
+        // ]]></script>
+        <hr style="background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2), transparent); border: 0; height: 1px; margin: 10px 0 0;" />
+        <div class="row">
+            <div class="col-sm-4">
+                <h2 class="filter-title" style="background-image: none; margin-top: 20px; margin-bottom: 5px;"><span class="content"><strong>New</strong></span></h2>
+                {{block type="filterproducts/newproduct_home_list" name="newproduct_list" product_count="3" template="filterproducts/small_list.phtml"}}</div>
+            <div class="col-sm-4">
+                <h2 class="filter-title" style="background-image: none; margin-top: 20px; margin-bottom: 5px;"><span class="content"><strong>Hot</strong></span></h2>
+                {{block type="filterproducts/bestsellers_home_list" name="bestsellers_list" product_count="3" template="filterproducts/small_list.phtml"}}</div>
+            <div class="col-sm-4">
+                <h2 class="filter-title" style="background-image: none; margin-top: 20px; margin-bottom: 5px;"><span class="content"><strong>Sale</strong></span></h2>
+                {{block type="filterproducts/sale_home_list" name="sale_list" product_count="3" template="filterproducts/small_list.phtml"}}</div>
+        </div>
+    </div>
+</div>
