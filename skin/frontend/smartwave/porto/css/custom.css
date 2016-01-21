@@ -13,10 +13,6 @@ a.tooltip-icon{border:1px solid #fff;color:#fff;border-radius:50%;display:block;
 .tooltip-popup em{font-size:10px}
 a.tooltip-close{position:absolute;right:10px;top:10px;color:#fff}
 .footer-middle>.container{position:relative}
-.item-options dt  {display: block;border-left:1px solid  #dcdcdc;margin-left: 10px;}
-.item-options dd  {display: block;}
-#wishlist-table textarea  {display: none;}
-.add-to-cart-alt input.qty {margin:0 -1px;height:30px;}
 
 /* tooltip for demo */
 @-webkit-keyframes tooltip-animation {
