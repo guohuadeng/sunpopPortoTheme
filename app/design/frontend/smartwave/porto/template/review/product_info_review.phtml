@@ -25,12 +25,12 @@
  */
 ?>
 
+
 <?php $_items = $this->getReviewsCollection()->getItems();?>
 <?php if (count($_items)):?>
 <div class="collateral-box" id="product-customer-reviews">
 
     <?php echo $this->getChildHtml('toolbar') ?>
-
     <ol>
         <?php foreach ($_items as $_review):?>
             <li>
@@ -68,3 +68,15 @@
 <div class="add-review">
 	<?php echo $this->getLayout()->createBlock('review/form')->setBlockId('product.review.form')->toHtml() ?>
 </div>
+
+<script type="text/javascript">
+    var $rcount = <?php echo (count($_items)) ?>;
+    jQuery.noConflict();
+    // Put all your code in your document ready area
+    jQuery(document).ready(function($){
+      // Do jQuery stuff using $
+      if ($rcount>0)    {
+        $("#tab_review_tabbed a").text('Reviews('+$rcount+')');
+        }
+    });
+</script>
