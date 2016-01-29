@@ -1,16 +1,10 @@
 <?xml version="1.0"?>
 <config>
-    <tabs>
-        <magegiant translate="label">
-            <label>Magegiant Extension</label>
-            <sort_order>400</sort_order>
-        </magegiant>
-    </tabs>
     <sections>
         <dailydeal translate="label" module="dailydeal">
             <class>separator-top</class>
             <label>Daily deal</label>
-            <tab>magegiant</tab>
+            <tab>swextensions</tab>
             <frontend_type>text</frontend_type>
             <sort_order>299</sort_order>
             <show_in_default>1</show_in_default>
