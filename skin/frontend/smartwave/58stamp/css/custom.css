@@ -13,6 +13,7 @@ a.tooltip-icon{border:1px solid #fff;color:#fff;border-radius:50%;display:block;
 .tooltip-popup em{font-size:10px}
 a.tooltip-close{position:absolute;right:10px;top:10px;color:#fff}
 .footer-middle>.container{position:relative}
+.footer-container.fixed-position{position:fixed;bottom:0;z-index:1;width:100%;margin:0}
 
 /* tooltip for demo */
 @-webkit-keyframes tooltip-animation {

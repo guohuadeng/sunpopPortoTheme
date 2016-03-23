@@ -19,7 +19,7 @@
             <span><i class="icon-user"></i><?php echo $this->__("By"); ?> <?php echo $post->getUser(); ?></span>
             <span><i class="icon-tag"></i><?php echo $this->getTagsHtml($post) ?></span>
             <?php if ($this->getCommentsEnabled()): ?>
-                <span><i class="icon-chat"></i><a href="<?php echo $post->getAddress(); ?>#commentBox" ><?php echo $post->getCommentCount(); ?> Comments</a></span>
+                <span><i class="icon-chat"></i><a href="<?php echo $post->getAddress(); ?>#commentBox" ><?php echo $post->getCommentCount(); ?><?php echo $this->__("Comments"); ?></a></span>
             <?php endif; ?>
         </div>
     </div>

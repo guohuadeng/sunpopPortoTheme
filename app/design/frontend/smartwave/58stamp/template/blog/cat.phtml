@@ -22,10 +22,10 @@
 
         <div class="postDetails">
             <span><i class="icon-calendar"></i><?php echo $post->getCreatedTime(); ?></span>
-            <span><i class="icon-user"></i><?php echo $this->__("By"); ?> <?php echo $post->getUser(); ?></span>
+            <span><i class="icon-user"></i><?php echo $this->__("作者"); ?> <?php echo $post->getUser(); ?></span>
             <span><i class="icon-tag"></i><?php echo $this->getTagsHtml($post) ?></span>
             <?php if ($this->getCommentsEnabled()): ?>
-                <span><i class="icon-chat"></i><a href="<?php echo $post->getAddress(); ?>#commentBox" ><?php echo $post->getCommentCount(); ?> Comments</a></span>
+                <span><i class="icon-chat"></i><a href="<?php echo $post->getAddress(); ?>#commentBox" ><?php echo $post->getCommentCount(); ?> <?php echo $this->__("Comments"); ?></a></span>
             <?php endif; ?>
             <?php $postCats = $post->getCats(); ?>
             <?php if (!empty($postCats)): ?>
