@@ -1,3 +1,12 @@
+<?php  
+	$params = $this->getRequest()->getParams();
+	$collection = Mage::getModel('weixinlogin/identifiers')
+				->getCollection()
+				->addFieldToFilter('unionid', $params['unionid']);
+	if($collection->getSize()){
+		$data = $collection->getFirstItem()->getData();
+	}
+?>
 <div class="account-login">
     <div class="page-title">
         <h1><?php echo $this->__('Login or Create an Account') ?></h1>
@@ -5,19 +14,23 @@
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
         <?php echo $this->getBlockHtml('formkey'); ?>
+		<?php if(count($data)>0):?>
+			<input type="hidden" name="unionid"  value="<?php echo $data['unionid']?>" />
+		<?php endif;?>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="new-users form-wrap">
                     <div class="content">
                         <h2><?php echo $this->__('New Customers') ?></h2>
                         <p><?php echo $this->__('By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.') ?></p>
+                        <p class="bg-success" style="padding:10px;"><?php echo $this->__('We suggest to use wechat to create an account.') ?></p>
                     </div>
                     <div class="buttons-set">
                         <button type="button" title="<?php echo $this->__('Create an Account') ?>" class="button" onclick="window.location='<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>';"><span><span><?php echo $this->__('Create an Account') ?></span></span></button>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="registered-users form-wrap">
                     <div class="content">
                         <h2><?php echo $this->__('Registered Customers') ?></h2>
@@ -39,7 +52,6 @@
                             <?php echo $this->getChildHtml('persistent.remember.me'); ?>
                         </ul>
                         <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
-                        <p class="required"><?php echo $this->__('* Required Fields') ?></p>
                     </div>
                     <div class="buttons-set">
                         <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot Your Password?') ?></a>
@@ -47,6 +59,27 @@
                     </div>
                 </div>
             </div>
+            <?php if ($weixin = Mage::getModel('weixinlogin/login')) { ?>
+              <div class="col-sm-4 wechat-users bg-success">
+                  <div class="content">
+                      <iframe  height="550" id="wechat-login" name="wechat-login" frameborder="0" scrolling="no" src="<?php echo $weixin->getRedirectURL() ?>"></iframe>
+                  </div>
+              </div>
+			  <?php if(!$data['unionid']):?>
+              <script type="text/javascript">
+                //如果是微信浏览器，就直接登录
+                function isWeiXin(){
+                   var ua = window.navigator.userAgent.toLowerCase();
+                   if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                     return true;
+                    } else {
+                        return false;
+                    }
+                }
+                if (isWeiXin()) window.location = "<?php echo $weixin->getRedirectURL() ?>";
+              </script>
+			  <?php endif;?>
+            <?php } ?>
         </div>
         <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
             <input name="context" type="hidden" value="checkout" />

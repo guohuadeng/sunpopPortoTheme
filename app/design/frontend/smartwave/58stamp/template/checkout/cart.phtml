@@ -20,7 +20,7 @@
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <div class="row">
-        <div class="col-sm-12 col-md-8 col-lg-9">
+        <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="cart-table-wrap">
                 <?php echo $this->getChildHtml('form_before') ?>
                 <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
@@ -33,12 +33,12 @@
                                 <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
                                 <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
                                 <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
-                                <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                                    <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
-                                <?php endif ?>
                                 <th colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
                                 <th rowspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Qty') ?></th>
                                 <th class="last" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
+                                <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                                    <th style="min-width:100px;" rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Action') ?></span></th>
+                                <?php endif ?>
                             </tr>
                             <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
                                 <tr>
@@ -108,7 +108,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-3">
+        <div class="col-sm-12 col-md-4 col-lg-3 pull-right">
             <div class="cart-collaterals">
                 <?php /* Extensions placeholder */ ?>
                 <?php echo $this->getChildHtml('checkout.cart.extra') ?>

@@ -73,13 +73,6 @@ $ratio = ($aspect_ratio || (!$aspect_ratio && Mage::getStoreConfig("porto_settin
             <?php echo $addInfoBlock->setItem($_item)->toHtml() ?>
         <?php endif;?>
     </td>
-    <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-    <td>
-        <?php if ($isVisibleProduct): ?>
-            <a href="<?php echo $this->helper('wishlist')->getMoveFromCartUrl($_item->getId()); ?>" class="link-wishlist use-ajax"><?php echo $this->__('Move to Wishlist'); ?></a>
-        <?php endif ?>
-    </td>
-    <?php endif ?>
 
     <?php if ($canApplyMsrp): ?>
         <td<?php if ($this->helper('tax')->displayCartBothPrices()): ?> colspan="2"<?php endif; ?>>
@@ -182,9 +175,6 @@ $ratio = ($aspect_ratio || (!$aspect_ratio && Mage::getStoreConfig("porto_settin
     <td>
         <div class="qty-holder">
             <a href="javascript:void(0)" class="table_qty_dec">-</a><input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" /><a href="javascript:void(0)" class="table_qty_inc">+</a>
-            <?php if ($isVisibleProduct): ?>
-                <a class="edit-qty" href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><i class="icon-pencil"></i></a>
-            <?php endif ?>
         </div>
     </td>
     <?php if (($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()) && !$_item->getNoSubtotal()): ?>
@@ -280,4 +270,15 @@ $ratio = ($aspect_ratio || (!$aspect_ratio && Mage::getStoreConfig("porto_settin
         <?php endif; ?>
     </td>
     <?php endif; ?>
+    <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+    <td>
+        <?php if ($isVisibleProduct): ?>
+            <a href="<?php echo $this->helper('wishlist')->getMoveFromCartUrl($_item->getId()); ?>" class="link-wishlist use-ajax"><?php echo $this->__('Move to Wishlist'); ?></a>
+        <?php endif ?>
+        <?php if ($isVisibleProduct): ?>
+            <br/><a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><?php echo $this->__('Edit item parameters') ?></a>
+        <?php endif ?>
+        <br/><a href="<?php echo $this->getDeleteUrl()?>" title="<?php echo $this->__('Remove item')?>"><?php echo $this->__('Remove item')?></a>
+    </td>
+    <?php endif ?>
 </tr>
