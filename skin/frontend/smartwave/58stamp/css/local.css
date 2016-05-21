@@ -3574,7 +3574,7 @@ body.side-header .top-container, body.side-header .main-container, body.side-hea
 .header-container.type12 .compare-link > a{height: 26px;padding: 4px 7px;background-color: #010101;border-radius: 2px;line-height: 18px;display: inline-block;color: #fff;text-transform: uppercase;text-align: center;font-size:11px}
 .header-container.type12 .header{text-align:center;position:static;min-height:100%;padding-bottom:20px}
 .header-container.type12 .header>.logo{margin:30px 0;max-width:none}
-.header-container.type12 .search-area{position:relative;margin:0;top:0;left:0;padding:0 7px;margin-bottom:20px;width:100%}
+.header-container.type12 .search-area{position:relative;margin:0;top:0;left:0;padding:0 7px;margin-bottom:20px;width:100%;display: none;}
 .header-container.type12 .search-area a.search-icon{display:none}
 .header-container.type12 .header #search_mini_form{margin:0;width:100%}
 .header-container.type12 .header .form-search{border-radius:5px;width:auto;min-width:initial;padding-right:140px}
