@@ -15,7 +15,6 @@ a.tooltip-close{position:absolute;right:10px;top:10px;color:#fff}
 .footer-middle>.container{position:relative}
 .footer-container.fixed-position{position:fixed;bottom:0;z-index:1;width:100%;margin:0}
 .cat-title {background-color: #0088cc;color: #fff;font-size: x-large;display: block;padding: 5px 10px;text-decoration:none;}
-.header-container.type12  {position: fixed;}
 /* tooltip for demo */
 @-webkit-keyframes tooltip-animation {
   0% {
